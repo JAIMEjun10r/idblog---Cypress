@@ -1,0 +1,79 @@
+- Funcionalidade: Navegação na página principal
+  Contexto: Navegar e verificar links
+
+  - Cenário: CT01 - Verificar links no header da página inicial
+    Dado que o usuário acessa a página inicial do blog
+    Quando visualiza o header da página
+    Então deve ver os itens no header como links
+    
+  - Cenário: CT02 - Navegar para a página Compliance
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Compliance no header
+    Então deve ser redirecionado para a página Compliance
+
+  - Cenário: CT03 - Navegar para a página KYC
+    Dado que o usuário está na página inicial do blog
+    Quando clica em KYC no header
+    Então deve ser redirecionado para a página KYC
+
+  - Cenário: CT04 - Navegar para a página Mercado Financeiro
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Mercado Financeiro no header
+    Então deve ser redirecionado para a página Mercado Financeiro
+
+  - Cenário: CT05 - Navegar para a página Varejo
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Mercado Varejo no header
+    Então deve ser redirecionado para a página Varejo
+
+  - Cenário: CT06 - Navegar para a página Transporte
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Mercado Transporte no header
+    Então deve ser redirecionado para a página Transporte
+   
+  - Cenário: CT07 - Navegar para a página Identidade
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Mercado Identidade no header
+    Então deve ser redirecionado para a página Identidade
+   
+  - Cenário: CT08 - Navegar para a página Onboarding
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Onboarding no header
+    Então deve ser redirecionado para a página Onboarding
+   
+  - Cenário: CT09 - Navegar para a página Privacidade
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Privacidade no header
+    Então deve ser redirecionado para a página Privacidade
+   
+  - Cenário: CT10 - Navegar para a página Outros
+    Dado que o usuário está na página inicial do blog
+    Quando clica em Outros
+    Então deve ser redirecionado para a página Outros
+
+  - Cenário: CT11 - Verificar links no submenu "Outros"
+    Dado que o usuário está na página inicial do blog
+    Quando posiciona o mouse sobre o link "Outros" no header
+    Então deve ver os itens no submenu "Outros" como links
+
+  - Cenário: CT12 - Navegar para um página e voltar
+    Dado que o usuário está na página inicial do blog
+    Quando clica em um link de navegação para outra página
+    E verifica que a nova página está carregada corretamente
+    E clica no botão de voltar do navegador
+    Então deve retornar à página inicial do blog
+
+- Funcionalidade: Newsletter
+  Contexto: verificar o comportamente da Newsletter com email válido e inválido
+
+  - Cenário: CT13 - Assinar Newsletter com E-mail válido 
+    Dado que o usuário está na página inicial do blog
+    Quando digita um e-mail válido no campo de newsletter
+    E clica no botão de assinatura
+    Então o sistema deve exibir uma mensagem de confirmação 
+
+  - Cenário: Assinar Newsletter com E-mail Inválido
+    Dado que o usuário está na página inicial do blog
+    Quando digita um e-mail inválido no campo de newsletter
+    E o usuário clica no botão de assinatura
+    Então o sistema deve exibir uma mensagem de erro indicando que o e-mail é inválido

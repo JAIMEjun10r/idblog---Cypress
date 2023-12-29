@@ -1,0 +1,22 @@
+{
+  "name": "idblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "headless": "npx cypress run --headless --browser chrome",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.1",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "cypress-plugin-steps": "^1.1.1",
+    "cypress-real-events": "^1.11.0"
+  }
+}
