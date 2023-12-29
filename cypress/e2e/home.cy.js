@@ -15,7 +15,7 @@ describe('Navegação na página principal', () => {
   });
 
   context('Navegar e verificar links', () => {
-    it('Verificar links no header da página inicial', () => {
+    it('CT01 - Verificar links no header da página inicial', () => {
       cy.step('Quando visualiza o header da página')
       cy.get('#menu-menu-principal')
         .should('be.visible')
@@ -28,7 +28,7 @@ describe('Navegação na página principal', () => {
 
     })
 
-    it('Navegar para a página Compliance', () => {
+    it('CT02 - Navegar para a página Compliance', () => {
       cy.step('Quando clica em Compliance no header')
       cy.menu('Compliance')
       cy.step('Então deve ser redirecionado para a página Compliance')
@@ -38,7 +38,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página KYC', () => {
+    it('CT03 - Navegar para a página KYC', () => {
       cy.step('Quando clica em KYC no header')
       cy.menu('KYC')
       cy.step('Então deve ser redirecionado para a página KYC')
@@ -48,7 +48,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Mercado Financeiro', () => {
+    it('CT04 - Navegar para a página Mercado Financeiro', () => {
       cy.step('Quando clica em Mercado Financeiro no header')
       cy.menu('Mercado Financeiro')
       cy.step('Então deve ser redirecionado para a página Mercado Financeiro')
@@ -58,7 +58,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Varejo', () => {
+    it('CT05 - Navegar para a página Varejo', () => {
       cy.step('Quando clica em Varejo no header')
       cy.menu('Varejo')
       cy.step('Então deve ser redirecionado para a página Varejo')
@@ -68,7 +68,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Transporte', () => {
+    it('CT06 - Navegar para a página Transporte', () => {
       cy.step('Quando clica em Transporte no header')
       cy.menu('Transporte')
       cy.step('Então deve ser redirecionado para a página Transporte')
@@ -78,7 +78,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Identidade', () => {
+    it('CT07 - Navegar para a página Identidade', () => {
       cy.step('Quando clica em Identidade no header')
       cy.menu('Identidade')
       cy.step('Então deve ser redirecionado para a página Identidade')
@@ -88,7 +88,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Onboarding', () => {
+    it('CT08 - Navegar para a página Onboarding', () => {
       cy.step('Quando clica em Onboarding no header')
       cy.menu('Onboarding')
       cy.step('Então deve ser redirecionado para a página Onboarding')
@@ -98,7 +98,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Privacidade', () => {
+    it('CT09 - Navegar para a página Privacidade', () => {
       cy.step('Quando clica em Privacidade no header')
       cy.menu('Privacidade')
       cy.step('Então deve ser redirecionado para a página Privacidade')
@@ -108,7 +108,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Navegar para a página Outros', () => {
+    it('CT10 - Navegar para a página Outros', () => {
       cy.step('Quando clica em Outros no header')
       cy.menu('Outros')
       cy.step('Então deve ser redirecionado para a página Outros')
@@ -118,7 +118,7 @@ describe('Navegação na página principal', () => {
         .and('be.visible')
     });
 
-    it('Verificar links no submenu "Outros"', () => {
+    it('CT11 - Verificar links no submenu "Outros"', () => {
       cy.step('Quando posiciona o mouse sobre o link "Outros" no header')
       cy.get('#menu-item-13306').realHover()
       cy.step('Então deve ver os itens no submenu "Outros" como links')
@@ -143,7 +143,7 @@ describe('Navegação na página principal', () => {
 
   })
   context('Newsletter', () => {
-    it('Assinar Newsletter com E-mail válido', () => {
+    it('CT13 - Assinar Newsletter com E-mail válido', () => {
       cy.step('Quando digita um e-mail válido no campo de newsletter')
       cy.iframe('.mailmunch-embedded-iframe')
         .as('iframe'); 
@@ -161,7 +161,7 @@ describe('Navegação na página principal', () => {
      
     });
 
-    it.only('Assinar Newsletter com E-mail inválido', () => {
+    it.only('CT14 - Assinar Newsletter com E-mail inválido', () => {
       cy.step('Quando digita um e-mail válido no campo de newsletter')
       cy.iframe('.mailmunch-embedded-iframe')
         .as('iframe'); 

@@ -72,7 +72,7 @@
     E clica no botão de assinatura
     Então o sistema deve exibir uma mensagem de confirmação 
 
-  - Cenário: Assinar Newsletter com E-mail Inválido
+  - Cenário: CT14 - Assinar Newsletter com E-mail Inválido
     Dado que o usuário está na página inicial do blog
     Quando digita um e-mail inválido no campo de newsletter
     E o usuário clica no botão de assinatura
