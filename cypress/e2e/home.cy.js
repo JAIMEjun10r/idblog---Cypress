@@ -6,7 +6,7 @@ import { emailInvalidoGerado } from '../support/helper';
 const listaNomesPrincipal = ['Compliance', 'KYC', 'Mercado Financeiro', 'Varejo', 'Transporte', 'Identidade', 'Onboarding', 'Privacidade', 'Outros'];
 const listaNomesOutros = ['Background Check', 'Onboarding', 'Anti-fraude', 'Inovação', 'Notícias', 'Institucional', 'Podcast'];
 
-describe('Navegação na página principal', () => {
+describe.only('Navegação na página principal', () => {
   beforeEach(() => {
     cy.step('Dado que o usuário acessa a página inicial do blog')
     cy.visit('/')
@@ -21,9 +21,14 @@ describe('Navegação na página principal', () => {
         .should('be.visible')
 
       cy.step('Então deve ver os itens no header como links')
-      cy.get('#menu-menu-principal')
-        .should('contain', 'Compliance KYC Mercado Financeiro Varejo Transporte Identidade Onboarding Privacidade Outros')
-        .and('be.visible')
+      listaNomesPrincipal.forEach(nome => {
+        cy.get('#menu-menu-principal')
+          .should('contain', nome)
+          .and('be.visible')
+      });
+      // cy.get('#menu-menu-principal')
+      //   .should('contain', 'Compliance KYC Mercado Financeiro Varejo Transporte Identidade Onboarding Privacidade Outros')
+      //   .and('be.visible')
       cy.verificaLinks(listaNomesPrincipal)
 
     })
@@ -146,37 +151,37 @@ describe('Navegação na página principal', () => {
     it('CT13 - Assinar Newsletter com E-mail válido', () => {
       cy.step('Quando digita um e-mail válido no campo de newsletter')
       cy.iframe('.mailmunch-embedded-iframe')
-        .as('iframe'); 
+        .as('iframe');
       cy.get('@iframe')
         .find('input[name="email"]')
         .type(emailGerado);
       cy.step('E clica no botão de assinatura')
-      cy.get('@iframe') 
+      cy.get('@iframe')
         .contains('Quero assinar!')
         .click();
       cy.step('Então o sistema deve exibir uma mensagem de confirmação')
       cy.get('@iframe')
         .contains('Inscrição feita com sucesso')
         .should('be.visible');
-     
+
     });
 
-    it.only('CT14 - Assinar Newsletter com E-mail inválido', () => {
+    it('CT14 - Assinar Newsletter com E-mail inválido', () => {
       cy.step('Quando digita um e-mail válido no campo de newsletter')
       cy.iframe('.mailmunch-embedded-iframe')
-        .as('iframe'); 
+        .as('iframe');
       cy.get('@iframe')
         .find('input[name="email"]')
         .type(emailInvalidoGerado);
       cy.step('E clica no botão de assinatura')
-      cy.get('@iframe') 
+      cy.get('@iframe')
         .contains('Quero assinar!')
         .click();
       cy.step('Então o sistema deve exibir uma mensagem de erro indicando que o e-mail é inválido')
       cy.get('@iframe')
         .contains('e-mail is invalid')
         .should('be.visible');
-     
+
     });
   });
 
