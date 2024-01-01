@@ -6,7 +6,7 @@ import { emailInvalidoGerado } from '../support/helper';
 const listaNomesPrincipal = ['Compliance', 'KYC', 'Mercado Financeiro', 'Varejo', 'Transporte', 'Identidade', 'Onboarding', 'Privacidade', 'Outros'];
 const listaNomesOutros = ['Background Check', 'Onboarding', 'Anti-fraude', 'Inovação', 'Notícias', 'Institucional', 'Podcast'];
 
-describe.only('Navegação na página principal', () => {
+describe('Navegação na página principal', () => {
   beforeEach(() => {
     cy.step('Dado que o usuário acessa a página inicial do blog')
     cy.visit('/')
@@ -26,9 +26,6 @@ describe.only('Navegação na página principal', () => {
           .should('contain', nome)
           .and('be.visible')
       });
-      // cy.get('#menu-menu-principal')
-      //   .should('contain', 'Compliance KYC Mercado Financeiro Varejo Transporte Identidade Onboarding Privacidade Outros')
-      //   .and('be.visible')
       cy.verificaLinks(listaNomesPrincipal)
 
     })
@@ -39,8 +36,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Compliance')
       cy.url().should('include', '/category/outros/compliance/')
       cy.title().should('eq', 'Arquivos Compliance : Blog idwall')
-      cy.contains('.title-bar h1 ', 'Compliance')
-        .and('be.visible')
+      cy.checaH1('Compliance')
     });
 
     it('CT03 - Navegar para a página KYC', () => {
@@ -49,8 +45,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página KYC')
       cy.url().should('include', '/category/outros/kyc/')
       cy.title().should('eq', 'Arquivos KYC : Blog idwall')
-      cy.contains('.title-bar h1 ', 'KYC')
-        .and('be.visible')
+      cy.checaH1('KYC')
     });
 
     it('CT04 - Navegar para a página Mercado Financeiro', () => {
@@ -59,8 +54,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Mercado Financeiro')
       cy.url().should('include', '/category/outros/mercado-financeiro/')
       cy.title().should('eq', 'Arquivos Mercado Financeiro : Blog idwall')
-      cy.contains('.title-bar h1', 'Mercado Financeiro')
-        .and('be.visible')
+      cy.checaH1('Mercado Financeiro')
     });
 
     it('CT05 - Navegar para a página Varejo', () => {
@@ -69,8 +63,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Varejo')
       cy.url().should('include', '/category/outros/varejo/')
       cy.title().should('eq', 'Arquivos Varejo : Blog idwall')
-      cy.contains('.title-bar h1', 'Varejo')
-        .and('be.visible')
+      cy.checaH1('Varejo')
     });
 
     it('CT06 - Navegar para a página Transporte', () => {
@@ -79,8 +72,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Transporte')
       cy.url().should('include', '/category/outros/transporte-outros/')
       cy.title().should('eq', 'Arquivos Transporte : Blog idwall')
-      cy.contains('.title-bar h1', 'Transporte')
-        .and('be.visible')
+      cy.checaH1('Transporte')
     });
 
     it('CT07 - Navegar para a página Identidade', () => {
@@ -89,8 +81,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Identidade')
       cy.url().should('include', '/category/outros/identidade/')
       cy.title().should('eq', 'Arquivos Identidade : Blog idwall')
-      cy.contains('.title-bar h1', 'Identidade')
-        .and('be.visible')
+      cy.checaH1('Identidade')
     });
 
     it('CT08 - Navegar para a página Onboarding', () => {
@@ -99,8 +90,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Onboarding')
       cy.url().should('include', '/category/outros/onboarding/')
       cy.title().should('eq', 'Arquivos Onboarding : Blog idwall')
-      cy.contains('.title-bar h1', 'Onboarding')
-        .and('be.visible')
+      cy.checaH1('Onboarding')
     });
 
     it('CT09 - Navegar para a página Privacidade', () => {
@@ -109,8 +99,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Privacidade')
       cy.url().should('include', '/category/outros/privacidade-e-seguranca/')
       cy.title().should('eq', 'Arquivos Privacidade e Segurança')
-      cy.contains('.title-bar h1', 'Privacidade')
-        .and('be.visible')
+      cy.checaH1('Privacidade')
     });
 
     it('CT10 - Navegar para a página Outros', () => {
@@ -119,8 +108,7 @@ describe.only('Navegação na página principal', () => {
       cy.step('Então deve ser redirecionado para a página Outros')
       cy.url().should('include', '/category/outros/')
       cy.title().should('eq', 'Arquivos Outros : Blog idwall')
-      cy.contains('.title-bar h1', 'Outros')
-        .and('be.visible')
+      cy.checaH1('Outros')
     });
 
     it('CT11 - Verificar links no submenu "Outros"', () => {

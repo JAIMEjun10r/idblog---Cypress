@@ -26,6 +26,11 @@ Cypress.Commands.add('menu', (nome) => {
         .click()
 })
 
+Cypress.Commands.add('checaH1', (texto) => {
+  cy.contains('.title-bar h1 ', texto)
+        .and('be.visible')
+})
+
 
 
 
