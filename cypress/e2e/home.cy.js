@@ -173,7 +173,7 @@ describe('Navegação na página principal', () => {
     });
   });
   context('Nos acompanhe nas redes sociais', () => {
-    it.only('CT15 - Verificar se os 3 ícones de redes sociais ao final da página possuem atributos href', () => {
+    it('CT15 - Verificar se os 3 ícones de redes sociais ao final da página possuem atributos href e urls corretas', () => {
       cy.step('Quando ele navega até o final da página')
       cy.contains('.elementor-widget-container > p', 'Nos acompanhe nas redes sociais')
         .should('be.visible')
