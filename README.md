@@ -114,6 +114,13 @@ Primeira forma:
 - **E:** o usuário clica no botão de assinatura
 - **Então:** o sistema deve exibir uma mensagem de erro indicando que o e-mail é inválido
 
+### CT15 - Verificar se os 3 ícones de redes sociais ao final da página possuem atributos href e urls corretas
+- **Dado:** o usuário está na página inicial do blog
+- **Quando:** navega até o final da página
+- **Então:** deverá visualizar os ícones das redes sociais, como Instagram, Youtube e Medium
+- **E:** cada ícone deve ter atributo href e url correta
+
+
 
 ## Contribuição
 Contribuições são bem-vindas! Se você encontrar problemas, bugs ou melhorias, sinta-se à vontade para criar uma issue ou enviar um pull request.
