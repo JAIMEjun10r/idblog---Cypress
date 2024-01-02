@@ -31,6 +31,21 @@ Cypress.Commands.add('checaH1', (texto) => {
         .and('be.visible')
 })
 
+Cypress.Commands.add('verificarRedesSociais', () => {
+  const redesSociais = [
+    { nome: 'Instagram', url: 'https://www.instagram.com/idwall_co/' },
+    { nome: 'Youtube', url: 'https://www.youtube.com/channel/UCjIoKQ3osMdiewFg8gaQVzQ/videos' },
+    { nome: 'Medium', url: 'https://medium.com/idwall' }
+  ];
+
+  redesSociais.forEach((redeSocial) => {
+    cy.get(`.elementor-social-icon-${redeSocial.nome.toLowerCase()}`)
+      .should('be.visible')
+      .invoke('attr', 'href')
+      .should('eq', redeSocial.url);
+  });
+});
+
 
 
 

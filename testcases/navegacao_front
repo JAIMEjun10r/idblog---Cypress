@@ -64,7 +64,7 @@
     Então deve retornar à página inicial do blog
 
 - Funcionalidade: Newsletter
-  Contexto: verificar o comportamente da Newsletter com email válido e inválido
+  Contexto: Verificar o comportamente da Newsletter com email válido e inválido
 
   - Cenário: CT13 - Assinar Newsletter com E-mail válido 
     Dado que o usuário está na página inicial do blog
@@ -77,3 +77,11 @@
     Quando digita um e-mail inválido no campo de newsletter
     E o usuário clica no botão de assinatura
     Então o sistema deve exibir uma mensagem de erro indicando que o e-mail é inválido
+
+  Funcionalidade: Nos acompanhe nas redes sociais
+  Contexto: Verificar se ícone de redes sociais estão visíveis e possuem atributo href
+  - Cenário: CT15 - Verificar se os 3 ícones de redes sociais ao final da página possuem atributos href 
+    Dado que o usuário está na página inicial do blog
+    Quando ele navega até o final da página
+    Então o usuário deverá visualizar os ícones das redes sociais, como Instagram, Youtube e Medium
+    E cada ícone deve ter atributo href e url correta

@@ -5,7 +5,7 @@ import { emailInvalidoGerado } from '../support/helper';
 
 const listaNomesPrincipal = ['Compliance', 'KYC', 'Mercado Financeiro', 'Varejo', 'Transporte', 'Identidade', 'Onboarding', 'Privacidade', 'Outros'];
 const listaNomesOutros = ['Background Check', 'Onboarding', 'Anti-fraude', 'Inovação', 'Notícias', 'Institucional', 'Podcast'];
-
+const listaRedesSociais = ['Instagram', 'Youtube', 'Medium']
 describe('Navegação na página principal', () => {
   beforeEach(() => {
     cy.step('Dado que o usuário acessa a página inicial do blog')
@@ -170,6 +170,23 @@ describe('Navegação na página principal', () => {
         .contains('e-mail is invalid')
         .should('be.visible');
 
+    });
+  });
+  context('Nos acompanhe nas redes sociais', () => {
+    it.only('CT15 - Verificar se os 3 ícones de redes sociais ao final da página possuem atributos href', () => {
+      cy.step('Quando ele navega até o final da página')
+      cy.contains('.elementor-widget-container > p', 'Nos acompanhe nas redes sociais')
+        .should('be.visible')
+        .scrollIntoView()
+      cy.step('Então o usuário deverá visualizar os ícones das redes sociais, como Instagram, Youtube e Medium')
+      listaRedesSociais.forEach(nome => {
+        cy.get('.elementor-social-icons-wrapper')
+          .should('contain', nome)
+          .and('be.visible')
+      })
+      cy.step('E cada ícone deve ter atributo href e url correta') 
+      cy.verificarRedesSociais(listaRedesSociais);
+    
     });
   });
 
