@@ -27,7 +27,6 @@ describe('Navegação na página principal', () => {
           .and('be.visible')
       });
       cy.verificaLinks(listaNomesPrincipal)
-
     })
 
     it('CT02 - Navegar para a página Compliance', () => {
