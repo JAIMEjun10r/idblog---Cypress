@@ -1,6 +1,5 @@
 - Funcionalidade: Navegação na página principal
   Contexto: Navegar e verificar links
-  #teste
 
   - Cenário: CT01 - Verificar links no header da página inicial
     Dado que o usuário acessa a página inicial do blog
