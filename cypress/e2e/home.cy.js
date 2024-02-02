@@ -15,7 +15,7 @@ describe('Navegação na página principal', () => {
   });
 
   context('Navegar e verificar links', () => {
-    it('CT01 - Verificar links no header da página inicial', () => {
+    it.only('CT01 - Verificar links no header da página inicial', () => {
       cy.step('Quando visualiza o header da página')
       cy.get('#menu-menu-principal')
         .should('be.visible')

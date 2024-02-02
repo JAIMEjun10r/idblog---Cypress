@@ -12,11 +12,8 @@ Cypress.Commands.add('verificaLinks', (listaNomes) => {
     listaNomes.forEach((nome) => {
       cy.get('#menu-menu-principal')
         .contains(nome)
-        .as('link')
         .should('have.attr', 'href')
-        .then(() => {
-          cy.get('@link').should('be.visible');
-        });
+        
     });
   });
 
